@@ -1,0 +1,76 @@
+// FORMS
+label {
+  text-transform: capitalize;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #2a70ef;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 1rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  min-width: 200px;
+  background: #2a70ef;
+  border: 1px solid #2a70ef;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: 300;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: ease .7s;
+  // float: right;
+}
+button:hover{
+  background: rgb(173, 216, 230);
+  color:blue;
+}
+.delete-btn {
+  background: red;
+  border: 1px solid red;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: 300;
+  margin: 3px auto;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  transition: ease .7s;
+  // float: right;
+}
+.delete-btn:hover{
+  background: rgb(252,192,192);
+  color:red;
+}
+.update-btn {
+  background: green;
+  border: 1px solid green;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: 300;
+  margin: 3px auto;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  transition: ease .7s;
+  // float: right;
+}
+.update-btn:hover{
+  background: rgb(192,252,192);
+  color:green;
+}

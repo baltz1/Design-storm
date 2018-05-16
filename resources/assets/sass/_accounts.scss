@@ -1,0 +1,49 @@
+#admin-section{
+  #projects{}
+  table {
+    display: table;
+    width: 100%;
+    margin: 20px 0px;
+
+    thead{
+      background: grey;
+      th{
+        border: 1px solid black;
+        color: white;
+      }
+    }
+    tbody{
+      tr{
+        a{
+          text-decoration: none;
+          color: #191f5d;
+        }
+        a:hover{
+          text-decoration: underline;
+        }
+      }
+      td{
+        border: 1px solid black;
+        text-align: center;
+        .edit-btn{
+          font-size: 12px;
+          padding: 10px 20px;
+          background: green;
+          display: inline-block;
+          border-radius: 3px;
+          color: white;
+          text-decoration: none;
+          transition: ease .7s;
+        }
+        .edit-btn:hover{
+          text-decoration: none;
+          background: rgb(192,252,192);
+          color: green;
+        }
+      }
+    }
+    th, td{
+      padding: 10px 20px;
+    }
+  }
+}
