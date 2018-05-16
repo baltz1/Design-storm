@@ -42,20 +42,24 @@ class PageController extends Controller
       // pretty much decodes the data that comes in into a object
       $data = json_decode($data);
       $filteredData = $data->projects;
-
-      $inspirationsArray = Project::where('user_id', Auth::id())->where('active', 2)->first();
-      $inspirationsArray = $inspirationsArray->inspirations;
-      $arrayInfo = [];
-      foreach($inspirationsArray as $image) {
-        array_push($arrayInfo, $image->image_info) ;
-      }
-
-      // return $inspirationArray;
-      $projects = Project::where('user_id',Auth::id())->where('active', 2)->first();
-      if($projects == null){
-        $projects = "Empty";
-      }
       $user = Auth::user();
-      return view('pages/results', compact('user', 'filteredData', 'keyword', 'arrayInfo', 'projects'));
-    }
+
+          $inspirationsArray = Project::where('user_id', Auth::id())->where('active', 2)->first();
+          $inspirationsArray = $inspirationsArray->inspirations;
+
+        $arrayInfo = [];
+        foreach($inspirationsArray as $image) {
+          array_push($arrayInfo, $image->image_info) ;
+        }
+
+
+        // return $inspirationArray;
+        $projects = Project::where('user_id',Auth::id())->where('active', 2)->first();
+        if($projects == null){
+          $projects = "Empty";
+        }
+
+        return view('pages/results', compact('user', 'filteredData', 'keyword', 'arrayInfo', 'projects'));
+
+      }
   }
