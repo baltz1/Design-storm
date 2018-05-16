@@ -15,9 +15,10 @@ class ProjectController extends Controller
         return back();
       }else{
         $projects = Project::where('user_id', Auth::id())->get();
+        $active = Project::where('user_id',Auth::id())->where('active', 2)->first();
         $user = Auth::user();
 
-        return view('account/projects/index', compact('projects', 'user'));
+        return view('account/projects/index', compact('projects', 'user', 'active'));
       }
   }
 

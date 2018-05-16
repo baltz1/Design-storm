@@ -25,8 +25,14 @@ class PageController extends Controller
     public function results(request $request){
 
       $search = $request->search;
+      $projects = Project::where('user_id',Auth::id())->where('active', 2)->first();
+      if($projects == null){
+        return redirect('/account/projects');
+      }else{
+        return redirect('search/'.urlencode($search));
+      }
 
-      return redirect('search/'.urlencode($search));
+
     }
 
 
@@ -45,9 +51,6 @@ class PageController extends Controller
       $user = Auth::user();
 
           $inspirationsArray = Project::where('user_id', Auth::id())->where('active', 2)->first();
-          if($inspirationsArray == null){
-            redirect('/account/projects');
-          }
           $inspirationsArray = $inspirationsArray->inspirations;
 
         $arrayInfo = [];

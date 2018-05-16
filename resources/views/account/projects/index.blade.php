@@ -8,6 +8,9 @@
   <div>
     <h1>Projects</h1>
     <h6>This is your current projects-<strong style="color:green;">{{$user->name}}</strong></h6>
+    @if ($active == null)
+      <p style="color:red;">Please have a Project active to search for inspiration</p>
+    @endif
     <div class="row">
       <div class="col-md-12">
         <div class="box">
