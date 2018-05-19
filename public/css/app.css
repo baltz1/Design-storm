@@ -781,6 +781,11 @@ header nav a:hover {
   color: white;
 }
 
+#site-section #home .search-area p {
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
 #site-section #results input {
   -webkit-box-flex: 1;
       -ms-flex: auto;

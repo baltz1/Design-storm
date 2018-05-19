@@ -16,6 +16,7 @@
               @csrf
               <h1>DesignStorm</h1>
               <input class="search" type="text" placeholder="Search" name="search">
+              <p>* Please Log In Before Searching</p>
             </form>
           </div>
         </div>
