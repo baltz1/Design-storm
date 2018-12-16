@@ -28,7 +28,7 @@ Route::get('/', 'PageController@index');
 
 Route::post('/results', 'PageController@results');
 
-Route::get('/search/{keyword}', 'PageController@search')->middleware('auth');
+Route::get('/search/{keyword}', 'PageController@search');
 
 Route::get('/search', 'PageController@index');
 

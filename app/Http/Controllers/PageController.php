@@ -27,12 +27,11 @@ class PageController extends Controller
       $search = $request->search;
       $projects = Project::where('user_id',Auth::id())->where('active', 2)->first();
       if($projects == null){
-        return redirect('/account/projects');
+        // return redirect('/account/projects');
+        return redirect('search/'.urlencode($search));
       }else{
         return redirect('search/'.urlencode($search));
       }
-
-
     }
 
 
@@ -49,14 +48,15 @@ class PageController extends Controller
       $data = json_decode($data);
       $filteredData = $data->projects;
       $user = Auth::user();
+      $arrayInfo = [];
+      if($user){
+        $inspirationsArray = Project::where('user_id', Auth::id())->where('active', 2)->first();
+        $inspirationsArray = $inspirationsArray->inspirations;
+      foreach($inspirationsArray as $image) {
+        array_push($arrayInfo, $image->image_info) ;
+      }
+      }
 
-          $inspirationsArray = Project::where('user_id', Auth::id())->where('active', 2)->first();
-          $inspirationsArray = $inspirationsArray->inspirations;
-
-        $arrayInfo = [];
-        foreach($inspirationsArray as $image) {
-          array_push($arrayInfo, $image->image_info) ;
-        }
 
 
         // return $inspirationArray;
